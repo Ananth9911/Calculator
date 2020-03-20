@@ -1,0 +1,107 @@
+<html>
+    <style>
+        body {
+            color: rgb(109, 104, 96);
+            padding-left: 500px;
+            padding-top: 100px;
+            width: 500px;
+            border-color: rgb(151, 60, 60);
+
+        }
+        tr {
+            background-color: rgb(29, 13, 7);
+            
+            
+        }
+        td {
+            text-align: center;
+        }
+        #h:hover {
+            background:cyan;
+
+        }
+        
+
+
+    </style>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+
+
+
+
+
+
+<body>
+    <h2>Calculator</h2>
+    <table border="2">
+    <tr>
+    <td><input type="button" value="C" onclick="C()"/> </td>
+    <td><input type="button" name="opp" value="+/-" id="opp" onclick="opposite()"/></td>
+    <td><input type="button" value="CE" onclick="CE()"/> </td>
+
+    <td colspan="2"><input type="text" id="Cal"/></td>
+    
+    </tr>
+    <tr>
+    
+    <td><input type="button" id="h" value="7" onclick="Take('7')"/> </td>
+    <td><input type="button" id="h" value="8" onclick="Take('8')"/> </td>
+    <td><input type="button" id="h" value="9" onclick="Take('9')"/> </td>
+    <td><input type="button" id="h" value="*" onclick="Take('*')"/> </td>
+    </tr>
+    <tr>
+    <td><input type="button" id="h" value="4" onclick="Take('4')"/> </td>
+    <td><input type="button" id="h" value="5" onclick="Take('5')"/> </td>
+    <td><input type="button" id="h" value="6" onclick="Take('6')"/> </td>
+    <td><input type="button" id="h" value="-" onclick="Take('-')"/> </td>
+    </tr>
+    <tr>
+    <td><input type="button" id="h" value="1" onclick="Take('1')"/> </td>
+    <td><input type="button" id="h" value="2" onclick="Take('2')"/> </td>
+    <td><input type="button" id="h" value="3" onclick="Take('3')"/> </td>
+    <td><input type="button" id="h" value="+" onclick="Take('+')"/> </td>
+    </tr>
+    <tr>
+    <td><input type="button" id="h" value="/" onclick="Take('/')"/> </td>
+    <td><input type="button" id="h" value="." onclick="Take('.')"/> </td>
+    <td><input type="button" id="h" value="0" onclick="Take('0')"/> </td>
+    <td><input type="button" id="h" value="=" onclick="Equate()"/> </td>
+    </tr>
+    
+    </table>
+    </body>
+</html>
+
+<script>
+     
+    function Equate()
+    {
+    var var1 = document.getElementById("Cal").value
+    var var2 = eval(var1)
+    document.getElementById("Cal").value = var2
+    }
+    function Take(val)
+    {
+    document.getElementById("Cal").value+=val
+    }
+    function C()
+    {
+    document.getElementById("Cal").value = ""
+    }
+    function CE()
+    {
+        document.getElementById("Cal").value = ""
+
+    
+    }
+    $("#opp").click(function(opposite){
+   var b=document.getElementById("Cal");
+   var n=b.value; 
+   n = n * -1;
+   b.value = n; 
+});
+</script>
